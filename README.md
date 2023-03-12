@@ -1,12 +1,9 @@
 
-# Cellulus
+# Unsupervised Learning of Object-Centric Embeddings for Cell Instance Segmentation in Microscopy Images
 
-A self-supervised learning method for spatial instance embedding applied to microscopy images for cell segmentation
- - a simple post-processing step cells can be segmented fully
-unsupervised
- - support supervised learning by adding the generated (unsupervised) segmentation to your dataset
+*Algorithm for unsupervised cell instance segmentation* We present a self-supervised learning method for object-centric embeddings (OCEs) which embed image patches such that the spatial offsets between patches cropped from the same object are preserved. Those learnt embeddings can be used to delineate individual objects and thus obtain instance segmentations. It relyies on assumptions commonly found in microscopy images; objects have a similar appearance and are randomly distributed in the image. If ground-truth annotations are available, this method serves as an excellent starting point for supervised training, reducing the required amount of ground-truth needed
 
----
+![](.assets/autospem.webp)
 
 ## Requirements and Setup
 
@@ -15,21 +12,12 @@ Install the required packages with conda
 conda create --name autospem --file environment.yml
 ```
 
-### External Datasets
-
-Models were trained on cell segmentation datasets that are part of the [tissuenet dataset](https://datasets.deepcell.org/) and the [cell tracking challenge datasets](http://celltrackingchallenge.net/2d-datasets/)
-
-
 ## Train Spatial Instance Embedding Networks
 
-![](.assets/autospem.webp)
 
 ```
 python colocseg/train_ssl.py --shape 252 252 --in_channels 2 --out_channels 2 --dspath <path to tissuenet files> --initial_lr 4e-05 --output_shape 236 236 --positive_radius 10 --regularization 1e-05 --check_val_every_n_epoch 10 --limit_val_batches 256 --max_epochs 50 --temperature 10 --lr_milestones 20 30 --batch_size 8 --loader_workers 8 --gpu 1
 ```
-
-## Download pretrained models
-
 
 ## Infer Mean and Std of Spatial Embeddings
 
@@ -50,3 +38,6 @@ python scripts/postprocess.py output.zarr meanshift_segmentation
 
 
 
+## External Datasets
+
+Models were trained on cell segmentation datasets that are part of the [tissuenet dataset](https://datasets.deepcell.org/) and the [cell tracking challenge datasets](http://celltrackingchallenge.net/2d-datasets/)
