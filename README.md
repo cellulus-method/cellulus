@@ -1,7 +1,7 @@
 
 # Unsupervised Learning of Object-Centric Embeddings for Cell Instance Segmentation in Microscopy Images
 
-*Algorithm for unsupervised cell instance segmentation.* We present a self-supervised learning method for object-centric embeddings (OCEs) which embed image patches such that the spatial offsets between patches cropped from the same object are preserved. Those learnt embeddings can be used to delineate individual objects and thus obtain instance segmentations. It relyies on assumptions commonly found in microscopy images; objects have a similar appearance and are randomly distributed in the image. If ground-truth annotations are available, this method serves as an excellent starting point for supervised training, reducing the required amount of ground-truth needed
+*Algorithm for unsupervised cell instance segmentation.* We present a self-supervised learning method for object-centric embeddings (OCEs) which embed image patches such that the spatial offsets between patches cropped from the same object are preserved. Those learnt embeddings can be used to delineate individual objects and thus obtain instance segmentations. The method relies on the assumptions (commonly found in microscopy images) that objects have a similar appearance and are randomly distributed in the image. If ground-truth annotations are available, this method serves as an excellent starting point for supervised training, reducing the required amount of ground-truth needed
 
 ![](.assets/autospem.webp)
 
