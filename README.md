@@ -41,3 +41,9 @@ python scripts/postprocess.py output.zarr meanshift_segmentation
 ## External Datasets
 
 Models were trained on cell segmentation datasets that are part of the [tissuenet dataset](https://datasets.deepcell.org/) and the [cell tracking challenge datasets](http://celltrackingchallenge.net/2d-datasets/)
+
+## 3D Segmentation
+
+![](.assets/3dcellulus.webp)
+> Fully unsupervised 3D segmentation with no prior training
+
